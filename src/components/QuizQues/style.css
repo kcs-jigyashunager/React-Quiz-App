@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+.card-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.card-position button{
+    margin-right: 10px;
+}
+
+.card-position button:hover{
+    background-color: lightgreen;
+    color: black;
+    font-weight: 600;
+}
