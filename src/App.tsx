@@ -3,7 +3,8 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import QuizQues from './components/QuizQues/quizQues';
 import QuestionCard from './components/QuestionCard/questionCard';
-import { fetchQuizQues } from './components/DataHandling/dataHandling';
+import Quiz from './components/Quiz/Quiz';
+import QuizQuestion from './components/QuizQuestion/quizQuestion';
 
 const TOTAL_QUESTIONS = 20;
 
@@ -16,8 +17,11 @@ function App() {
   const [score, setScore] = useState(0);
   const [quizOver, setQuizOver] = useState(true)
 
-  console.log(fetchQuizQues(), "hooo")
 
+  const [data, setData] = useState<string[]>([]);
+  const quesData = (resData: any) => {
+       setData(resData)
+  }
 
   const startQuiz = async() => {
   }
@@ -48,6 +52,7 @@ function App() {
           setDataState(myJson)
           });
       }
+
   
   return (
     <div className="App">
@@ -66,6 +71,8 @@ function App() {
         Next Question
       </button>
       <QuizQues questions={dataState}/>
+      <Quiz sendQuesData={quesData}/>
+      <QuizQuestion receiveQuesData={data}/>
     
     </div>
   );
