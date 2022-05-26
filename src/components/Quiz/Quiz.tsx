@@ -1,38 +1,46 @@
 import React,{ useEffect, useState} from 'react';
+import axios from "axios";
 
 type props = {
-    sendQuesData: (arg: string) => void
+    sendData: (arg: string[]) => void
 }
 
-let Quiz:React.FC<props> = ({ sendQuesData }) => {
+let Quiz:React.FC<props> = ({ sendData }) => {
 
-    const [dataState, setDataState] = useState([] as any)
+    const [dataState, setDataState] = useState([] as string[])
 
-    const getData = () =>{
-        fetch('data.json'
-        ,{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+    const getData = async() => {
+        const { data } = await axios.get('./data.json')
+        
+        const formattedData = data.map((category:any) => {
+            const incorrectAnswersIndexes = category.incorrect_answers.length;
+            const randomIndex = Math.random() * (incorrectAnswersIndexes - 0) + 0;
+            category.incorrect_answers.splice(
+                randomIndex,
+                0, 
+                category.correct_answer
+                )
+
+            return {
+                ...category,
+                answers: category.incorrect_answers
             }
-        }
-        )
-            .then(function(response){
-            return response.json();
-            })
-            .then(function(myJson) {
-            setDataState(myJson)
-            });
-        }
+        });
+
+        setDataState(formattedData);  
+      };
     
     useEffect(() => {
         getData()
-    }, [])
-    
+    }, []);    
   
+    const arrSizeReducer = (arr: any) => [...arr].sort(() => 0.5 - Math.random()).slice(0, 20);
+
+    const newList = arrSizeReducer(dataState);
+    
   return (
     <div>
-        <button onClick={() => sendQuesData(dataState)}>Start Quiz</button>
+        <button onClick={() => sendData(newList)}>Start Quiz</button>
     </div>
   )
 }
