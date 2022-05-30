@@ -1,0 +1,33 @@
+.startPage{
+    opacity: 1;
+    background-color: #cccccc;
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url("../Images/p.jpg");
+}
+
+.startPage h1{
+    font-size: 50px;
+    color: azure;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.startPage button{
+    margin-left: 670px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 20px;   
+    background-color: white; 
+}
+
+.startPage button:hover{
+    background-color: black;
+    color: white;
+}

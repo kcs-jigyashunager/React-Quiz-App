@@ -1,0 +1,14 @@
+.card{
+    margin-left: 560px;
+}
+
+.endPage button{
+    margin-left: 80px;
+    border-radius: 5px;
+}
+
+.endPage button:hover{
+    color: white;
+    background-color: black;
+    font-size: 15px;
+}
