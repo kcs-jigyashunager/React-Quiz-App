@@ -22,7 +22,6 @@ function App() {
             <Route path='/quiz' element={<QuizQuestion receiveQuesData={allData}/>}/>
             <Route path='/quizEnded' element={<QuizEnd receiveData={allData}/>}/>
           </Routes>
-
       </BrowserRouter>
     </div>
   );

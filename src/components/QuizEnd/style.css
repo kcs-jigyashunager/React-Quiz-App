@@ -1,9 +1,7 @@
-.card{
-    margin-left: 560px;
-}
+
 
 .endPage button{
-    margin-left: 80px;
+    float: left;
     border-radius: 5px;
 }
 
@@ -12,3 +10,27 @@
     background-color: black;
     font-size: 15px;
 }
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .para{
+      font-size: 30px;
+  }
+
+  h2{
+      text-align: center;
+  }

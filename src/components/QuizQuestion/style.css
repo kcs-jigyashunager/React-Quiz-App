@@ -1,18 +1,18 @@
 .container{
-    height: 850px;
+    height: 750px;
     width: 100%;
-}
-
-.card-position{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 220px;
+}
+
+.card-position{
+    margin-right: 80px;
+    
 }
 
 .secButton{
     color: red;
     font-weight: 700;
-    
     
 }

@@ -22,8 +22,8 @@ let QuizQuestionButton:React.FC<props> = ({receiveAnsData, getIndex, sendIndex, 
     sendIndex(ansIndex)
   }
 
-  const font = "false"
-  const font2 = "true"
+  const font = "False"
+  const font2 = "True"
 
   const getWrongAns = (ans:string) => {
       if(sendRightAns === ans){

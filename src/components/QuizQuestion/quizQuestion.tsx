@@ -9,14 +9,13 @@ type props = {
 
 let QuizQuestion:React.FC<props> = ({receiveQuesData}) => {
 
-    console.log(receiveQuesData)
     const [quesIndex, setQuesindex] = useState<number>(1);
 
     const increaseIndex = () => {
         setQuesindex(quesIndex+1)
-        setSeconds(20)
+        setSeconds(60)
     }
-    const [seconds, setSeconds] = useState<number>(20);
+    const [seconds, setSeconds] = useState<number>(60);
 
     useEffect(() => { { 
       const interval = setInterval(() => {
@@ -26,7 +25,7 @@ let QuizQuestion:React.FC<props> = ({receiveQuesData}) => {
     }}, [seconds]);
   
     if(seconds < 0) {
-      setSeconds(20)
+      setSeconds(60)
       increaseIndex()
     }
 

@@ -4,13 +4,11 @@ import type { RootState } from '../../store';
 // Define a type for the slice state
 interface DataState {
   ans: string[],
-  ques: string[]
 }
 
 // Define the initial state using that type
 const initialState: DataState = {
   ans: [],
-  ques: []
 }
 
 export const dataSlice = createSlice({
@@ -24,18 +22,12 @@ export const dataSlice = createSlice({
     },
     clearData: (state, action: PayloadAction<string>) => {   
       state.ans = []
-    },
-    saveQues: (state, action:PayloadAction<string>) => {
-      state.ques = [...state.ques, action.payload]
-    },
-    clearQues: (state, action:PayloadAction<string>) => {
-      state.ques = []
     }
   }
   
 })
 
-export const { saveData, clearData, saveQues, clearQues } = dataSlice.actions
+export const { saveData, clearData } = dataSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCount = (state: RootState) => state.quesAns.ans
